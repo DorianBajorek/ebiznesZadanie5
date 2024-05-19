@@ -1,9 +1,9 @@
-import axios from 'axios';
+import PropTypes from 'prop-types';
 import '../styles/Basket.css';
 import Payment from './Payment';
 import { useEffect } from "react";
+
 function Basket({ boughtProducts, totalSpentMoney }) {
-    
     return (
         <div className="basket-content">
             <h2>Basket</h2>
@@ -11,8 +11,8 @@ function Basket({ boughtProducts, totalSpentMoney }) {
                 <h3>Bought Products:</h3>
                 <ul>
                     {boughtProducts.map(product => (
-                        <div>
-                        <li key={product.name}>{product.name} - {product.price}</li>
+                        <div key={product.name}>
+                            <li>{product.name} - {product.price}</li>
                         </div>
                     ))}
                 </ul>
@@ -21,5 +21,13 @@ function Basket({ boughtProducts, totalSpentMoney }) {
         </div>
     );
 }
+
+Basket.propTypes = {
+    boughtProducts: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired
+    })).isRequired,
+    totalSpentMoney: PropTypes.number.isRequired
+};
 
 export default Basket;
