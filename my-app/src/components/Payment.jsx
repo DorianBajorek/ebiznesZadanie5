@@ -1,25 +1,72 @@
-import axios from 'axios';
-import '../styles/Basket.css';
+import { useEffect, useState } from "react";
+import axios from "axios";
+import PropTypes from 'prop-types'; // Import PropTypes
+import '../styles/Products.css';
 
-function Payment({totalSpentMoney}){
+function Products({ addToBoughtProducts, updateTotalSpentMoney }) {
+    const [products, setProducts] = useState([]);
 
-    const payForProducts = async () => {
-        var response = await axios.post("http://localhost:8080/api/payForProducts", { valueToPay: parseFloat(totalSpentMoney) });
-        console.log(response.data)
+    const fetchProducts = async () => {
+        const response = await axios.get('http://localhost:8080/api/products');
+        console.log(response.data);
+        setProducts(response.data.map(product => ({
+            name: product.first,
+            price: product.second,
+            amount: product.third
+        })));
+    };
+
+    useEffect(() => {
+        fetchProducts();
+    }, []);
+
+    const addToBasket = async (product) => {
+        var productName = product.name;
+        var productPrice = product.price;
+        console.log(productName);
+        const response = await axios.post('http://localhost:8080/api/sellProduct', productName);
+        console.log(response.data);
         if(response.data === true){
-            alert("Thanks for shopping")
-        } else {
-            alert("You havent got enough money")
+            updateTotalSpentMoney(productPrice);
+            addToBoughtProducts(product);
+            fetchProducts();
         }
     }
 
+    const clearShop = async() => {
+        const response = await axios.delete('http://localhost:8080/api/deleteProduct');
+        console.log("DONE")
+        fetchProducts()
+    }
+
+    const addNewProduct = async() => {
+        const response = await axios.put('http://localhost:8080/api/putProduct');
+        console.log("DONE")
+        fetchProducts()
+    }
+
     return (
-        <div className="summery">
-            <h3>Total Spent Money:</h3>
-            <p>{totalSpentMoney}</p>
-            <button onClick={payForProducts} id="pay-button"> Pay </button>
+        <div className="products-content">
+            <div className="products-nav">
+                Products
+            </div>
+            <div className="list-of-products">
+                {products.map(product => (
+                    <div className="product" key={product.name}>
+                        <p>{`${product.name} - ${product.price}, amount: ${product.amount}`}</p>
+                        <button id="add-basket" onClick={() => addToBasket(product)}>Add to Basket</button>
+                    </div>
+                ))}
+                <button id="remover" onClick={clearShop}>Remove all product</button>
+                <button id="adder" onClick={addNewProduct}>Remove all product</button>
+            </div>
         </div>
     );
 }
 
-export default Payment;
+Products.propTypes = {
+    addToBoughtProducts: PropTypes.func.isRequired, // Prop type validation for addToBoughtProducts
+    updateTotalSpentMoney: PropTypes.func.isRequired, // Prop type validation for updateTotalSpentMoney
+};
+
+export default Products;
