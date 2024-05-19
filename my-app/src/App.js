@@ -3,8 +3,7 @@ import './App.css';
 import Basket from './components/Basket';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Products from './components/Products';
-import { useState } from 'react';
-import { useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 function App() {
   const [boughtProducts, setBoughtProducts] = useState([]);

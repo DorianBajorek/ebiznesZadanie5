@@ -67,8 +67,8 @@ function Products({ addToBoughtProducts, updateTotalSpentMoney }) {
 }
 
 Products.propTypes = {
-    addToBoughtProducts: PropTypes.func.isRequired, // Prop type validation for addToBoughtProducts
-    updateTotalSpentMoney: PropTypes.func.isRequired, // Prop type validation for updateTotalSpentMoney
+    addToBoughtProducts: PropTypes.func.isRequired,
+    updateTotalSpentMoney: PropTypes.func.isRequired,
 };
 
 export default Products;

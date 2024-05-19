@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import '../styles/Basket.css';
 import Payment from './Payment';
-import { useEffect } from "react";
 
 function Basket({ boughtProducts, totalSpentMoney }) {
     return (
