@@ -10,7 +10,7 @@ RUN npm install
 RUN npm run build
 
 # Stage 2: Serve the React app
-FROM nginx:alpine
+# FROM nginx:alpine
 
 COPY --from=build /app/build /usr/share/nginx/html
 
