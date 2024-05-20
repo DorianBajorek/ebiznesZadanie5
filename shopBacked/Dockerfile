@@ -2,7 +2,7 @@ FROM gradle:7.3.3-jdk11 AS build
 
 WORKDIR /app
 
-COPY . .
+# COPY . . its necessary on local
 
 RUN gradle build --no-daemon
 
