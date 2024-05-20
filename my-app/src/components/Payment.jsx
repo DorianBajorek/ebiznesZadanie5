@@ -1,15 +1,17 @@
+// Payment.jsx
 import axios from 'axios';
+import PropTypes from 'prop-types'; // Importing prop-types library
 import '../styles/Basket.css';
 
-function Payment({totalSpentMoney}){
+function Payment({ totalSpentMoney }) {
 
     const payForProducts = async () => {
-        var response = await axios.post("http://localhost:8080/api/payForProducts", { valueToPay: parseFloat(totalSpentMoney) });
-        console.log(response.data)
-        if(response.data === true){
-            alert("Thanks for shopping")
+        const response = await axios.post("http://localhost:8080/api/payForProducts", { valueToPay: parseFloat(totalSpentMoney) });
+        console.log(response.data);
+        if (response.data === true) {
+            alert("Thanks for shopping");
         } else {
-            alert("You havent got enough money")
+            alert("You haven't got enough money");
         }
     }
 
@@ -21,5 +23,12 @@ function Payment({totalSpentMoney}){
         </div>
     );
 }
+
+Payment.propTypes = {
+    totalSpentMoney: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+    ]).isRequired
+};
 
 export default Payment;
