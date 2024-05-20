@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
-COPY . .
+# COPY . . its necessary on local
 RUN npm run build
 
 # Stage 2: Serve the React app
