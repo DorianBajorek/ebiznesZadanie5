@@ -1,6 +1,6 @@
 plugins {
     kotlin("jvm") version "1.8.0"
-    application
+    id("org.springframework.boot") version "2.7.0"
 }
 
 group = "org.example"
@@ -25,11 +25,11 @@ dependencies {
 }
 
 kotlin {
-    // Usunięcie zbędnego ustawienia wersji JVM
-    // jvmToolchain(11)
 }
 
-application {
-    mainClass.set("MainKt")
-}
 
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = "com.example.Application"
+    }
+}
