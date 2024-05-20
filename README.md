@@ -1,7 +1,8 @@
 Repozytorium to zadwiera rozwiązania do zadania 5 oraz 7. <br>
 
 Rozwiązanie zadania 5:<br>
-Rozwiązania spełnia wymagania na ocenę: 3.0, 3.5 oraz 4.0<br>
+Rozwiązania spełnia wymagania na ocenę: 3.0, 3.5, 4.0, 4.5 oraz 5.0 <br>
+Link do nagrania: https://youtu.be/xqgvW-mtXj0
 
 
 Rozwiązanie zadania 7:
