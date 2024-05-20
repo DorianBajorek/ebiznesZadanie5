@@ -1,13 +1,13 @@
-Repozytorium to zadwiera rozwiązania do zadania 5 oraz 7.
+Repozytorium to zadwiera rozwiązania do zadania 5 oraz 7. <br>
 
-Rozwiązanie zadania 5:
-Rozwiązania spełnia wymagania na ocenę: 3.0, 3.5 oraz 4.0
+Rozwiązanie zadania 5:<br>
+Rozwiązania spełnia wymagania na ocenę: 3.0, 3.5 oraz 4.0<br>
 
 
 Rozwiązanie zadania 7:
-Rozwiązanie spełnia wymagania na ocenę: 3.0, 3.5, 4.0, 4.5 oraz 5.0.
-Link do nagrania: 
-Widgety dotyczące wyników poprawności kodu na podstawie SonarCloud
+Rozwiązanie spełnia wymagania na ocenę: 3.0, 3.5, 4.0, 4.5 oraz 5.0.<br>
+Link do nagrania: <br>
+Widgety dotyczące wyników poprawności kodu na podstawie SonarCloud<br>
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=DorianBajorek_ebiznesZadanie5&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=DorianBajorek_ebiznesZadanie5)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=DorianBajorek_ebiznesZadanie5&metric=bugs)](https://sonarcloud.io/summary/new_code?id=DorianBajorek_ebiznesZadanie5)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=DorianBajorek_ebiznesZadanie5&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=DorianBajorek_ebiznesZadanie5)
