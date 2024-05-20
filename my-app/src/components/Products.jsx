@@ -1,6 +1,7 @@
 // Products.jsx
 import { useEffect, useState } from "react";
 import axios from "axios";
+import PropTypes from 'prop-types';
 import '../styles/Products.css';
 
 function Products({ addToBoughtProducts, updateTotalSpentMoney }) {
@@ -22,8 +23,8 @@ function Products({ addToBoughtProducts, updateTotalSpentMoney }) {
     }, []);
 
     const addToBasket = async (product) => {
-        var productName = product.name;
-        var productPrice = product.price;
+        let productName = product.name;
+        let productPrice = product.price;
         console.log(productName);
         const response = await axios.post('http://localhost:8080/api/sellProduct', productName);
         console.log(response.data);
@@ -37,12 +38,14 @@ function Products({ addToBoughtProducts, updateTotalSpentMoney }) {
     const clearShop = async() => {
         const response = await axios.delete('http://localhost:8080/api/deleteProduct');
         console.log("DONE")
+        console.log(response)
         fetchProducts()
     }
 
     const addNewProduct = async() => {
         const response = await axios.put('http://localhost:8080/api/putProduct');
         console.log("DONE")
+        console.log(response)
         fetchProducts()
     }
 
@@ -65,5 +68,10 @@ function Products({ addToBoughtProducts, updateTotalSpentMoney }) {
         </div>
     );
 }
+
+Products.propTypes = {
+    addToBoughtProducts: PropTypes.func.isRequired,
+    updateTotalSpentMoney: PropTypes.func.isRequired
+};
 
 export default Products;
