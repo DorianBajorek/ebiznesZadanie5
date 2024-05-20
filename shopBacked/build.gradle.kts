@@ -10,13 +10,18 @@ repositories {
     mavenCentral()
 }
 
+val springBootVersion = "2.7.0"
+val jacksonModuleKotlinVersion = "2.13.1"
+val seleniumVersion = "3.141.59"
+val junitJupiterVersion = "5.6.0"
+
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-web:2.7.0")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.1")
-    implementation("org.seleniumhq.selenium:selenium-java:3.141.59")
-    implementation("org.seleniumhq.selenium:selenium-chrome-driver:3.141.59")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.6.0")
+    implementation("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonModuleKotlinVersion")
+    implementation("org.seleniumhq.selenium:selenium-java:$seleniumVersion")
+    implementation("org.seleniumhq.selenium:selenium-chrome-driver:$seleniumVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
 }
 
 kotlin {

@@ -2,8 +2,6 @@ package com.example
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.web.bind.annotation.*
-import kotlin.random.Random
-
 
 @CrossOrigin(origins = ["http://localhost:3000"], allowCredentials = "true")
 @RestController
